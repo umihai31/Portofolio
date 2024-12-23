@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MU - Portofolio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="{{ url_for('home') }}" class="nav-branding">MU Portofolio.</a>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="{{ url_for('home') }}" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url_for('portofolio') }}" class="nav-link">Portfolio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url_for('about') }}" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url_for('contact') }}" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main class="hero">
+        <div class="hero-container">
+            <!-- Secțiunea textului -->
+            <div class="hero-text">
+                <h1>Hi There,<br> I'm <span class="highlight">Mihai</span></h1>
+                <p>I Am Into <span class="highlight">Data Analyst</span></p>
+                <a href="{{ url_for('about') }}" class="btn btn-primary">About Me</a>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com" target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.twitter.com" target="_blank" class="social-link"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://www.instagram.com" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.facebook.com" target="_blank" class="social-link"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+
+            <!-- Secțiunea imaginii -->
+            <div class="hero-image">
+                <img src="{{ url_for('static', filename='images/avatar.webp') }}" alt="Profile Picture">
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Mihai. Toate drepturile rezervate.</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

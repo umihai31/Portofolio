@@ -1,0 +1,272 @@
+/* Stiluri globale */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: transparent;
+    background: url('../images/background.webp') no-repeat center center/cover;
+    background-attachment: fixed; /* Fundal fix pentru întreaga pagină */
+    background-size: cover; /* Asigură că fundalul acoperă tot */
+}
+
+/* Header */
+header {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    z-index: 10;
+    height: 70px; /* Înălțimea exactă a header-ului */
+    display: flex;
+    align-items: center;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 24px;
+    background: transparent; /* Complet transparent */
+    border: none;
+    box-shadow: none;
+}
+
+/* Branding */
+.nav-branding {
+    font-size: 2rem;
+    color: white;
+    text-decoration: none;
+}
+
+/* Meniul este ascuns inițial */
+.nav-menu {
+    position: absolute;
+    top: 70px; /* Apare sub bara */
+    right: 24px; /* Lângă hamburger */
+    background: transparent;
+    border-radius: 8px;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    opacity: 0;
+    transform: scale(0.8); /* Inițial mai mic */
+    pointer-events: none; /* Ascuns inițial */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    list-style: none;
+}
+
+.nav-menu.active {
+    opacity: 1;
+    transform: scale(1); /* Mărime normală */
+    pointer-events: auto; /* Activăm interacțiunile */
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: dodgerblue;
+}
+
+/* Butonul hamburger */
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 21px;
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+/* Animația butonului hamburger */
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Fundalul paginii principale */
+.hero {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: calc(100vh - 70px); /* Înălțimea completă minus navbar */
+    background: transparent; /* Lăsăm doar fundalul principal */
+    color: #ffffff;
+    padding: 20px;
+}
+
+.hero-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%; /* Ajustăm lățimea secțiunii */
+    max-width: 1200px;
+    gap: 40px;
+}
+
+.hero-text {
+    flex: 1 1 300px;
+    text-align: center; /* Aliniere text la stânga */
+    max-width: 500px;
+}
+
+.hero-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.hero-text .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #ff9800;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+    font-size: 1rem;
+}
+
+.hero-text .btn:hover {
+    background: #e68a00;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-icons a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: #ffffff; /* Fundal alb */
+    color: #333333; /* Culoarea pictogramelor */
+    border-radius: 50%; /* Formă rotundă */
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Umbră subtilă */
+}
+
+.social-icons a:hover {
+    transform: scale(1.1); /* Scalare pe hover */
+    background-color: #ff9800; /* Fundal portocaliu pe hover */
+    color: #ffffff; /* Culoarea pictogramelor devine albă */
+}
+
+.social-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: #ffffff; /* Fundal alb */
+    color: #333333; /* Culoarea pictogramei */
+    border-radius: 50%; /* Formă rotundă */
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Umbră subtilă */
+}
+
+.social-link:hover {
+    transform: scale(1.1); /* Scalare pe hover */
+    background-color: #ff9800; /* Fundal portocaliu pe hover */
+    color: #ffffff; /* Culoarea pictogramei devine albă */
+}
+
+/* Avatar din dreapta */
+.hero-image {
+    flex: 1 1 300px; /* Dimensiune flexibilă minimă */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.hero-image img {
+    max-width: 300px; /* Scalare corectă */
+    height: auto;
+    border-radius: 50%; /* Imagine circulară */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Media Queries pentru ecrane mai mici */
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column; /* Elemente pe verticală */
+    }
+
+    .hero-text {
+        text-align: center; /* Realiniază textul */
+    }
+
+    .hero-image img {
+        max-width: 250px; /* Dimensiune redusă a avatarului */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-text h1 {
+        font-size: 2rem; /* Dimensiuni mai mici pentru text */
+    }
+
+    .hero-text p {
+        font-size: 1rem;
+    }
+
+    .hero-text .btn {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background: transparent; /* Fundal complet transparent */
+    padding: 10px 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    color: #ffffff;
+    font-size: 0.9rem;
+}
